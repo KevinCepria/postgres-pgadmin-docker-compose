@@ -32,8 +32,10 @@ services:
     environment: 
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
 volumes:
   postgres-data:
   pgadmin-data:
